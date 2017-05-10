@@ -1,6 +1,9 @@
-export function reverse () {
+export function ReverseFilter () {
   return function (input) {
-    return input.split("").reverse().join("");
-}
+    if (typeof input !== 'string') return
+    return input
+      .split('')
+      .reverse()
+      .join('')
   }
 }
