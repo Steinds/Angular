@@ -1,1 +1,5 @@
-DEUX
+<div ng-controller="ApplicationInfoController as $ctrl">
+    {{ $ctrl.info.name | uppercase }}
+    <br>
+    {{ $ctrl.info.date | date:'fullDate' }}
+</div>
