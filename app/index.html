@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Burger</title>
+    <script src="bundle.js"></script>
+    <style>
+    .test strong {
+        display: block !important;
+    }
+    </style>
+</head>
+<body ng-app="app">
+     <div class="container" ng-controller="TabsController as $ctrl">
+
+        <ul class="nav nav-tabs">
+            <li ng-repeat="tab in $ctrl.tabs track by $index" ng-class="{'active': $ctrl.index === $index}">
+                <a ng-click="$ctrl.changeTab($index)" href>{{tab.title}}</a>
+            </li>
+            <li class="pull-right">
+                <button class="btn" ng-click="$ctrl.rightTab()">&lt;</button>
+                <button class="btn" ng-click="$ctrl.leftTab()">&gt;</button>
+            </li>
+        </ul>
+        <div ng-repeat="tab in $ctrl.tabs" ng-if="$ctrl.index === $index">
+            <h1>{{tab.title}}</h1>
+            <ng-include src="'./views/'+tab.template+'.html'"></ng-include>
+        </div>
+
+       
+
+     </div>
+
+
+    <!--
+    <button class="btn btn-primary">
+        TEST
+        </button>
+    <h1 ng-controller="UserController as $ctrl">
+        Bonjour {{ $ctrl.getName() }}
+
+    </h1>
+
+    <div ng-controller="ApplicationInfoController as $ctrl">
+         <strong>{{ $ctrl.name }}</strong>
+        <span ng-if="$ctrl.show">{{ $ctrl.version }}</span>
+        <button class="btn" ng-click="$ctrl.showVersion()">{{ $ctrl.toggle }}</button>
+    </div> -->
+
+</body>
+</html>
