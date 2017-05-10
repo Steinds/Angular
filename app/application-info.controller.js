@@ -1,9 +1,14 @@
 export class ApplicationInfoController {
   constructor () {
-    this.name = 'Burger2'
-    this.version = '1.0.0'
-    this.show = false
-    this.toggle = 'Show Version'
+    this.info = {
+      name: 'Burger',
+      version: '1.0.0',
+      date: new Date(2012, 10, 10)
+    }
+
+    console.log(this.info.name)
+
+    this.showVersion = false
     this.users = [
       { name: 'John', email: 'test@ici' },
       { name: 'lzkejflkez', email: 'sdfsd@ici' },
@@ -11,12 +16,8 @@ export class ApplicationInfoController {
       { name: 'regergre', email: 'ouliu@ici' }
     ]
   }
-  showVersion () {
-    this.show = !this.show
-    if (this.toggle === 'Show Version') {
-      this.toggle = 'Hide Version'
-    } else {
-      this.toggle = 'Show Version'
-    }
+
+  toggleVersion () {
+    this.showVersion = !this.showVersion
   }
 }
