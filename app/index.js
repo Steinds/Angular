@@ -10,6 +10,7 @@ angular.module('app', [])
 .controller('UserController', UserController)
 .controller('ApplicationInfoController', ApplicationInfoController)
 .controller('TabsController', TabsController)
+.filter('reverse', reverse)
 .config(function () {
   console.log('CONFIG ANGULAR')
 })
