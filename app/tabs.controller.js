@@ -1,27 +1,32 @@
 export class TabsController {
   constructor () {
-    this.index = 0
     this.tabs = [
-        { title: 'user', template: 'un' },
-        { title: 'application', template: 'deux' },
-        { title: 'contact', template: 'trois' }
+      { title: 'Burgers', template: 'burgers' },
+      { title: 'Play', template: 'application' }
     ]
+
+    this.tab = 0
   }
-  changeTab (index) {
-    this.index = index
+
+  changeTab (tab) {
+    this.tab = tab
   }
-  rightTab () {
-    this.index--
-    if (this.index < 0) {
-      this.index++
-    }
-    console.log(this.index)
+
+  navigateTab (direction) {
+    this.tab = (this.tabs.length + this.tab + direction) % this.tabs.length
+
+    // if (this.tab === 0 && direction === -1) {
+    //   this.tab = this.tabs.length - 1
+    //   return
+    // }
+    // if (this.tab === this.tabs.length - 1 && direction === 1) {
+    //   this.tab = 0
+    //   return
+    // }
+    // this.tab += direction
   }
-  leftTab () {
-    this.index++
-    if (this.index > this.tabs.length - 1) {
-      this.index--
-    }
-    console.log(this.index)
+
+  getTemplate (tab) {
+    return `views/${tab.template}.html`
   }
 }
