@@ -1,1 +1,18 @@
-UN
+<div ng-controller="BurgersController as $ctrl">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>#Toppings</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="burger in $ctrl.burgers track by $index">
+                <td>{{ burger.name }}</td>
+                <td>{{ burger.toppings.length }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
