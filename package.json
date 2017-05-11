@@ -7,7 +7,7 @@
     "start": "npm-run-all --parallel dev:*",
     "dev:server": "webpack-dev-server --open",
     "dev:copycast": "copycast",
-    "std": "standard \"app/*.js\" --fix"
+    "std": "standard \"app/*.js\""
   },
   "keywords": [],
   "author": "",
@@ -27,6 +27,8 @@
   },
   "dependencies": {
     "angular": "^1.6.4",
-    "bootstrap": "^3.3.7"
+    "bootstrap": "^3.3.7",
+    "lodash": "^4.17.4",
+    "uuid": "^3.0.1"
   }
 }
