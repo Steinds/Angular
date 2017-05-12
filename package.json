@@ -7,7 +7,7 @@
     "start": "npm-run-all --parallel dev:*",
     "dev:server": "webpack-dev-server --open",
     "dev:api": "json-server db.json -w",
-    "std": "standard \"app/*.js\"--fix"
+    "std": "standard --fix \"app/*.js\""
   },
   "keywords": [],
   "author": "",
