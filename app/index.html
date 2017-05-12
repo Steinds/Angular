@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Burger</title>
-    <script src="bundle.js"></script>
+    <script src="/bundle.js"></script>
     <style>
         .container {
             margin-top: 3em;
@@ -17,9 +17,19 @@
             content: ' ↓'
         }
     </style>
+    <base href="/">
 </head>
 <body ng-app="app">
 
+    <a href="/">BURGERS</a>
+    <a href="/game">PLAY</a>
+    <a href="/topping/3">3</a>
+    <a href="/topping/4">4</a>
+    
+
+    <div ng-view class="container"></div>
+    
+<!--
     <div class="container" ng-controller="TabsController as $ctrl">
 
         <ul class="nav nav-tabs">
@@ -46,6 +56,6 @@
             ng-if="$ctrl.tab === $index"
             src="$ctrl.getTemplate(tab)"></ng-include>
 
-    </div>
+    </div>-->
 </body>
 </html>

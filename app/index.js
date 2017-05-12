@@ -1,17 +1,22 @@
 import angular from 'angular'
+import RouteModule from 'angular-route'
 import 'bootstrap/dist/css/bootstrap.css'
 
 import { BurgersController } from './burgers.controller'
-import { GameController } from './game.controller'
-import { TabsController } from './tabs.controller'
-import { ReverseFilter } from './reverse.filter'
+import { BurgerController } from './burger.controller'
 import { BurgerService } from './burger.service'
+import { GameController } from './game.controller'
+import { ReverseFilter } from './reverse.filter'
+import { TabsController } from './tabs.controller'
 import { ToppingService } from './topping.service'
 
 // Création du module app (application)
-angular.module('app', [])
+angular.module('app', [
+  RouteModule // 'ngRoute'
+])
 
 .controller('BurgersController', BurgersController)
+.controller('BurgerController', BurgerController)
 .controller('GameController', GameController)
 .controller('TabsController', TabsController)
 
@@ -20,9 +25,33 @@ angular.module('app', [])
 .service('BurgerService', BurgerService)
 .service('ToppingService', ToppingService)
 
-// .config(function () {
-//     console.log('CONFIG ANGULAR');
-// })
+.config(function ($routeProvider, $locationProvider) {
+  $locationProvider.html5Mode(true)
+
+  $routeProvider
+
+    .when('/', {
+      controller: 'BurgersController',
+      templateUrl: 'views/burgers.html',
+      controllerAs: '$ctrl'
+    })
+
+    .when('/game', {
+      controller: 'GameController',
+      templateUrl: 'views/game.html',
+      controllerAs: '$ctrl'
+    })
+
+    .when('/burger/:id?', {
+      controller: 'BurgerController',
+      templateUrl: 'views/burger.html',
+      controllerAs: '$ctrl'
+    })
+    .otherwise({
+      redirectTo: '/'
+        // template: 'PAS TROUVÉ !'
+    })
+})
 
 // .run(function () {
 //     console.log('RUN ANGULAR');

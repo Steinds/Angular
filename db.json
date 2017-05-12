@@ -1,30 +1,46 @@
 {
-    "burgers": [
-      {
-        "id": 1,
-        "name": "maxi b",
-        "toppings": ["steak", "salad"],
-        "creator": "paul@ici.fr"
-      },
-      {
-        "id": 2,
-        "name": "hot",
-        "toppings": ["steak", "tomate", "spicy sauce"],
-        "creator": "paul@ici.fr"
-      },
-      {
-        "id": 3,
-        "name": "vegan",
-        "toppings": ["soja steak", "salad", "onions"],
-        "creator": "paul@ici.fr"
-      },
-      {
-        "id": 4,
-        "name": "zombie",
-        "toppings": ["steak", "tomate"],
-        "creator": "paul@ici.fr"
-      }
-    ],
+  "burgers": [
+    {
+      "id": 1,
+      "name": "maxiA",
+      "toppings": [
+        "egg",
+        "salad",
+        "steak"
+      ],
+      "creator": "paul@ici.fr"
+    },
+    {
+      "id": 2,
+      "name": "hot",
+      "toppings": [
+        "cheese",
+        "onions",
+        "steak"
+      ],
+      "creator": "paul@ici.fr"
+    },
+    {
+      "id": 3,
+      "name": "vegan",
+      "toppings": [
+        "soja steak",
+        "salad",
+        "onions"
+      ],
+      "creator": "paul@ici.fr"
+    },
+    {
+      "name": "Gobelin",
+      "toppings": [
+        "salad",
+        "pickle",
+        "soja steak"
+      ],
+      "creator": "test@testouille.fr",
+      "id": 4
+    }
+  ],
   "toppings": [
     {
       "id": 1,
@@ -43,7 +59,7 @@
     },
     {
       "id": 4,
-      "name": "onion",
+      "name": "onions",
       "vegan": true
     },
     {
