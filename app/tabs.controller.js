@@ -2,7 +2,7 @@ export class TabsController {
   constructor () {
     this.tabs = [
       { title: 'Burgers', template: 'burgers' },
-      { title: 'Play', template: 'application' }
+      { title: 'Play', template: 'game' }
     ]
 
     this.tab = 0
